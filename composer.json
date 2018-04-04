@@ -1,0 +1,45 @@
+{
+    "name": "flagrow/html-errors",
+    "description": "Add custom HTML error pages",
+    "keywords": [
+        "extension",
+        "flarum",
+        "error",
+        "page",
+        "html"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Clark Winkelmann",
+            "email": "clark.winkelmann@gmail.com",
+            "homepage": "https://clarkwinkelmann.com/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/flagrow/html-errors/issues",
+        "source": "https://github.com/flagrow/html-errors"
+    },
+    "require": {
+        "flarum/core": "^0.1.0-beta.7"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Flagrow HTML Errors",
+            "icon": {
+                "name": "exclamation-circle",
+                "backgroundColor": "#f4f4f4",
+                "color": "#5f4bb6"
+            }
+        },
+        "flagrow": {
+            "discuss": "https://discuss.flarum.org/d/10784-custom-html-error-pages"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Flagrow\\HtmlErrors\\": "src/"
+        }
+    }
+}
