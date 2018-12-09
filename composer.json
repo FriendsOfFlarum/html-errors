@@ -22,19 +22,19 @@
         "source": "https://github.com/flagrow/html-errors"
     },
     "require": {
-        "flarum/core": "^0.1.0-beta.7"
+        "flarum/core": "^0.1.0-beta.8"
     },
     "extra": {
         "flarum-extension": {
             "title": "Flagrow HTML Errors",
             "icon": {
-                "name": "exclamation-circle",
+                "name": "fas fa-exclamation-circle",
                 "backgroundColor": "#f4f4f4",
                 "color": "#5f4bb6"
             }
         },
         "flagrow": {
-            "discuss": "https://discuss.flarum.org/d/10784-custom-html-error-pages"
+            "discuss": "https://discuss.flarum.org/d/10784"
         }
     },
     "autoload": {
