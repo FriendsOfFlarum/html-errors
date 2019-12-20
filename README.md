@@ -1,25 +1,24 @@
-# Custom HTML Error Pages by ![Flagrow logo](https://avatars0.githubusercontent.com/u/16413865?v=3&s=20) [Flagrow](https://discuss.flarum.org/d/1832-flagrow-extension-developer-group), a project of [Gravure](https://gravure.io/)
+# Custom HTML Error Pages by FriendsOfFlarum
 
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flagrow/html-errors/blob/master/LICENSE.md) [![Latest Stable Version](https://img.shields.io/packagist/v/flagrow/html-errors.svg)](https://packagist.org/packages/flagrow/html-errors) [![Total Downloads](https://img.shields.io/packagist/dt/flagrow/html-errors.svg)](https://packagist.org/packages/flagrow/html-errors) [![Donate](https://img.shields.io/badge/patreon-support-yellow.svg)](https://www.patreon.com/flagrow) [![Join our Discord server](https://discordapp.com/api/guilds/240489109041315840/embed.png)](https://flagrow.io/join-discord)
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/fof/html-errors.svg)](https://packagist.org/packages/fof/html-errors) [![OpenCollective](https://img.shields.io/badge/opencollective-fof-blue.svg)](https://opencollective.com/fof/donate)
 
 This extension allows you to customize the Flarum error pages.
-By default these pages have very boring HTML content with no styling and no link in beta7.
+By default these pages have only limited styling in Flarum.
 Now you can change them to something that better reflects your website!
 
 ## Installation
 
-Use [Bazaar](https://discuss.flarum.org/d/5151-flagrow-bazaar-the-extension-marketplace) or install manually:
+Use Bazaar or install it with Composer:
 
-```bash
-composer require flagrow/html-errors
+```
+composer require fof/html-errors
 ```
 
 ## Updating
 
-```bash
-composer update flagrow/html-errors
-php flarum migrate
-php flarum cache:clear
+```
+composer update fof/html-errors
 ```
 
 ## Configuration
@@ -30,24 +29,16 @@ Leaving a field empty will show the default Flarum error page.
 The custom error pages are only applied when browsing the forum front-end.
 Any error response under /api or /admin is unaffected.
 
+The custom error pages are not shown when debug mode is on.
+
 You can handle additional error codes by entering the values manually in the `settings` table of the database.
-
-## Support our work
-
-We prefer to keep our work available to everyone.
-In order to do so we rely on voluntary contributions on [Patreon](https://www.patreon.com/flagrow).
-
-## Security
-
-If you discover a security vulnerability within Custom HTML Error Pages, please send an email to the Gravure team at security@gravure.io. All security vulnerabilities will be promptly addressed.
-
-Please include as many details as possible. You can use `php flarum info` to get the PHP, Flarum and extension versions installed.
 
 ## Links
 
-- [Flarum Discuss post](https://discuss.flarum.org/d/10784-custom-html-error-pages)
-- [Source code on GitHub](https://github.com/flagrow/html-errors)
-- [Report an issue](https://github.com/flagrow/html-errors/issues)
-- [Download via Packagist](https://packagist.org/packages/flagrow/html-errors)
+[![OpenCollective](https://img.shields.io/badge/donate-friendsofflarum-44AEE5?style=for-the-badge&logo=open-collective)](https://opencollective.com/fof/donate)
 
-An extension by [Flagrow](https://flagrow.io/), a project of [Gravure](https://gravure.io/).
+- [Flarum Discuss post](https://discuss.flarum.org/d/10784)
+- [Packagist](https://packagist.org/packages/fof/html-errors)
+- [GitHub](https://github.com/FriendsOfFlarum/html-errors)
+
+An extension by [FriendsOfFlarum](https://github.com/FriendsOfFlarum).

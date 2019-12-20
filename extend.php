@@ -1,6 +1,6 @@
 <?php
 
-namespace Flagrow\HtmlErrors;
+namespace FoF\HtmlErrors;
 
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;

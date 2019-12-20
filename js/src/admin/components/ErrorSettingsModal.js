@@ -1,8 +1,11 @@
 import app from 'flarum/app';
 import SettingsModal from 'flarum/components/SettingsModal';
 
+// Keeping the old flagrow settings prefix because it's easier
 const settingsPrefix = 'flagrow-html-errors.';
-const translationPrefix = 'flagrow-html-errors.admin.settings.';
+const translationPrefix = 'fof-html-errors.admin.settings.';
+
+/* global m */
 
 export default class ErrorSettingsModal extends SettingsModal {
     title() {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Flagrow\HtmlErrors\Listeners;
+namespace FoF\HtmlErrors\Listeners;
 
-use Flagrow\HtmlErrors\Middlewares\HandleErrors;
 use Flarum\Event\ConfigureMiddleware;
+use FoF\HtmlErrors\Middlewares\HandleErrors;
 use Illuminate\Contracts\Events\Dispatcher;
 
 class Middlewares
@@ -18,7 +18,8 @@ class Middlewares
 
     public function configureMiddleware(ConfigureMiddleware $event)
     {
-        if (!$event->isForum()) {
+        // Only add to forum and only when debug mode is turned off
+        if (!$event->isForum() || app()->inDebugMode()) {
             return;
         }
 

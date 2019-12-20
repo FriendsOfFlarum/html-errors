@@ -1,5 +1,5 @@
 {
-    "name": "flagrow/html-errors",
+    "name": "fof/html-errors",
     "description": "Add custom HTML error pages",
     "keywords": [
         "extension",
@@ -18,19 +18,22 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/flagrow/html-errors/issues",
-        "source": "https://github.com/flagrow/html-errors"
+        "issues": "https://github.com/FriendsOfFlarum/html-errors/issues",
+        "source": "https://github.com/FriendsOfFlarum/html-errors"
     },
     "require": {
-        "flarum/core": "^0.1.0-beta.8"
+        "flarum/core": ">=0.1.0-beta.11 <0.1.0-beta.13"
+    },
+    "replace": {
+        "flagrow/html-errors": "*"
     },
     "extra": {
         "flarum-extension": {
-            "title": "Flagrow HTML Errors",
+            "title": "FoF HTML Errors",
             "icon": {
                 "name": "fas fa-exclamation-circle",
-                "backgroundColor": "#f4f4f4",
-                "color": "#5f4bb6"
+                "backgroundColor": "#e74c3c",
+                "color": "#fff"
             }
         },
         "flagrow": {
@@ -39,7 +42,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Flagrow\\HtmlErrors\\": "src/"
+            "FoF\\HtmlErrors\\": "src/"
         }
     }
 }

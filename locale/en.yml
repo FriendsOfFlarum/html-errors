@@ -1,4 +1,4 @@
-flagrow-html-errors:
+fof-html-errors:
     admin:
         settings:
             title: Custom HTML Error Pages
