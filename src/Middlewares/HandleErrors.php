@@ -17,8 +17,6 @@ class HandleErrors implements MiddlewareInterface
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         try {
-            throw new Exception('Random error');
-
             $response = $handler->handle($request);
         } catch (Exception $exception) {
             /**
