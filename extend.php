@@ -3,13 +3,15 @@
 namespace FoF\HtmlErrors;
 
 use Flarum\Extend;
-use Illuminate\Contracts\Events\Dispatcher;
+use Flarum\Foundation\Application;
 
 return [
     (new Extend\Frontend('admin'))
         ->js(__DIR__ . '/js/dist/admin.js'),
+
     new Extend\Locales(__DIR__ . '/locale'),
-    function (Dispatcher $events) {
-        $events->subscribe(Listeners\Middlewares::class);
+
+    function (Application $app) {
+        $app->register(Providers\ErrorServiceProvider::class);
     },
 ];

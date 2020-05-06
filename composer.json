@@ -22,7 +22,7 @@
         "source": "https://github.com/FriendsOfFlarum/html-errors"
     },
     "require": {
-        "flarum/core": ">=0.1.0-beta.11 <0.1.0-beta.13"
+        "flarum/core": ">=0.1.0-beta.12 <0.1.0-beta.14"
     },
     "replace": {
         "flagrow/html-errors": "*"
