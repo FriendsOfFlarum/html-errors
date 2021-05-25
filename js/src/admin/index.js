@@ -1,4 +1,4 @@
-import app from 'flarum/app';
+import app from 'flarum/admin/app';
 
 // Keeping the old flagrow settings prefix because it's easier
 const settingsPrefix = 'flagrow-html-errors.';
