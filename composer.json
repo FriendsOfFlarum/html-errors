@@ -10,6 +10,8 @@
     ],
     "type": "flarum-extension",
     "license": "MIT",
+    "minimum-stability": "beta",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Clark Winkelmann",
@@ -30,7 +32,7 @@
         }
     ],
     "require": {
-        "flarum/core": "^1.8.0"
+        "flarum/core": "^2.0.0"
     },
     "replace": {
         "flagrow/html-errors": "*"
@@ -52,6 +54,9 @@
             "modules": {
                 "githubActions": true
             }
+        },
+        "branch-alias": {
+            "dev-2.x": "2.x-dev"
         }
     },
     "autoload": {
@@ -60,7 +65,7 @@
         }
     },
     "require-dev": {
-        "flarum/phpstan": "*"
+        "flarum/phpstan": "^2.0"
     },
     "scripts": {
         "analyse:phpstan": "phpstan analyse",

@@ -5,7 +5,7 @@ const settingsPrefix = 'flagrow-html-errors.';
 const translationPrefix = 'fof-html-errors.admin.settings.';
 
 app.initializers.add('fof-html-errors', () => {
-  const extensionData = app.extensionData.for('fof-html-errors');
+  const extensionData = app.registry.for('fof-html-errors');
 
   [403, 404, 500, 503].map((error) => {
     extensionData.registerSetting({
