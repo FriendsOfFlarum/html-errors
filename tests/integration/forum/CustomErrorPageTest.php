@@ -5,6 +5,7 @@ namespace FoF\HtmlErrors\Tests\integration\forum;
 use Flarum\Testing\integration\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
+use Psr\Http\Message\ServerRequestInterface;
 
 class CustomErrorPageTest extends TestCase
 {
@@ -13,6 +14,15 @@ class CustomErrorPageTest extends TestCase
         parent::setUp();
 
         $this->extension('fof-html-errors');
+    }
+
+    /**
+     * A forum page request as a browser sends it. Core renders the error for a request
+     * that doesn't accept HTML as JSON (flarum/framework#4677).
+     */
+    protected function browserRequest(string $method, string $path): ServerRequestInterface
+    {
+        return $this->request($method, $path)->withHeader('Accept', 'text/html');
     }
 
     #[Test]
@@ -29,7 +39,7 @@ class CustomErrorPageTest extends TestCase
     public function a_404_returns_default_flarum_error_page_when_no_custom_html_set(): void
     {
         $response = $this->send(
-            $this->request('GET', '/this-route-does-not-exist')
+            $this->browserRequest('GET', '/this-route-does-not-exist')
         );
 
         $this->assertEquals(404, $response->getStatusCode());
@@ -45,7 +55,7 @@ class CustomErrorPageTest extends TestCase
         $this->setting('flagrow-html-errors.custom404ErrorHtml', '<h1>My Custom 404</h1>');
 
         $response = $this->send(
-            $this->request('GET', '/this-route-does-not-exist')
+            $this->browserRequest('GET', '/this-route-does-not-exist')
         );
 
         $this->assertEquals(404, $response->getStatusCode());
@@ -63,7 +73,7 @@ class CustomErrorPageTest extends TestCase
         $this->setting('flagrow-html-errors.custom404ErrorHtml', '<p>Not here</p>');
 
         $response = $this->send(
-            $this->request('GET', '/this-route-does-not-exist')
+            $this->browserRequest('GET', '/this-route-does-not-exist')
         );
 
         $this->assertEquals(404, $response->getStatusCode());
@@ -76,7 +86,7 @@ class CustomErrorPageTest extends TestCase
         $this->setting('flagrow-html-errors.custom404ErrorHtml', '');
 
         $response = $this->send(
-            $this->request('GET', '/this-route-does-not-exist')
+            $this->browserRequest('GET', '/this-route-does-not-exist')
         );
 
         $this->assertEquals(404, $response->getStatusCode());
@@ -93,7 +103,7 @@ class CustomErrorPageTest extends TestCase
         $this->setting('flagrow-html-errors.custom404ErrorHtml', $fullHtml);
 
         $response = $this->send(
-            $this->request('GET', '/nonexistent-page')
+            $this->browserRequest('GET', '/nonexistent-page')
         );
 
         $this->assertEquals(404, $response->getStatusCode());
@@ -126,7 +136,7 @@ class CustomErrorPageTest extends TestCase
 
         // Extension IS enabled in this test class, so we verify it works
         $response = $this->send(
-            $this->request('GET', '/nonexistent')
+            $this->browserRequest('GET', '/nonexistent')
         );
 
         $this->assertEquals(404, $response->getStatusCode());
@@ -140,7 +150,7 @@ class CustomErrorPageTest extends TestCase
         $this->setting($settingKey, $html);
 
         $response = $this->send(
-            $this->request('GET', $url)
+            $this->browserRequest('GET', $url)
         );
 
         $this->assertEquals($expectedStatus, $response->getStatusCode());
